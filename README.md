@@ -14,7 +14,7 @@ This project is licensed under the MIT License
 ## Acknowledgements:
 Thank you to the following people who helped in developing and troubleshooting the code for this program.
 
-Corinna Brock Moore
-Katie Cage
-Alberto Morales
-Kyle Smith
+- Corinna Brock Moore
+- Katie Cage
+- Alberto Morales
+- Kyle Smith
