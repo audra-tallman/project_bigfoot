@@ -1,0 +1,41 @@
+doc.css(".spaced").css(".reportcaption").text
+
+gets "July 2009, Fairbanks Borough - Daytime sighting of reddish-colored bigfoot near FairbanksAugust 2008, Southeast Fairbanks Borough - Hunter describes powerful wood knocks at a cabin in remote wilderness south of the town of ChickenApril 2008, Southeast Fairbanks Borough - Passenger on the Alcan Highway sees a tall bipedal creature walk across the road"
+
+
+
+
+doc.css(".spaced").css(".reportcaption").css("a").text
+
+gets "July 2009, Fairbanks BoroughAugust 2008, Southeast Fairbanks BoroughApril 2008, Southeast Fairbanks Borough"
+[9] pry(Scraper)>
+
+doc.css(".spaced").css(".reportcaption").css("span").text
+
+gets "July 2009, Fairbanks Borough - Daytime sighting of reddish-colored bigfoot near FairbanksAugust 2008, Southeast Fairbanks Borough - Hunter describes powerful wood knocks at a cabin in remote wilderness south of the town of ChickenApril 2008, Southeast Fairbanks Borough - Passenger on the Alcan Highway sees a tall bipedal creature walk across the road"
+
+
+doc.css(".spaced").text
+=> "July 2009, Fairbanks Borough (Class A) - Daytime sighting of reddish-colored bigfoot near Fairbanks\r\n\r\nAugust 2008, Southeast Fairbanks Borough (Class B) - Hunter describes powerful wood knocks at a cabin in remote wilderness south of the town of Chicken\r\n\r\nApril 2008, Southeast Fairbanks Borough (Class A) - Passenger on the Alcan Highway sees a tall bipedal creature walk across the road\r\n\r\n\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t"
+
+doc.css(".spaced").text.split("\r")
+=> ["July 2009, Fairbanks Borough (Class A) - Daytime sighting of reddish-colored bigfoot near Fairbanks",
+ "\n",
+ "\nAugust 2008, Southeast Fairbanks Borough (Class B) - Hunter describes powerful wood knocks at a cabin in remote wilderness south of the town of Chicken",
+ "\n",
+ "\nApril 2008, Southeast Fairbanks Borough (Class A) - Passenger on the Alcan Highway sees a tall bipedal creature walk across the road",
+ "\n",
+ "\n",
+ "\n\t\t\t\t\t\t",
+ "\n\t\t\t\t\t"]
+
+ doc.css(".spaced").text.gsub!(/[\n\t]/,"")
+=> "July 2009, Fairbanks Borough (Class A) - Daytime sighting of reddish-colored bigfoot near Fairbanks\r\rAugust 2008, Southeast Fairbanks Borough (Class B) - Hunter describes powerful wood knocks at a cabin in remote wilderness south of the town of Chicken\r\rApril 2008, Southeast Fairbanks Borough (Class A) - Passenger on the Alcan Highway sees a tall bipedal creature walk across the road\r\r\r\r"
+
+
+doc.css(".spaced").text.gsub!(/[\n\t]/,"").split("\r")
+=> ["July 2009, Fairbanks Borough (Class A) - Daytime sighting of reddish-colored bigfoot near Fairbanks",
+ "",
+ "August 2008, Southeast Fairbanks Borough (Class B) - Hunter describes powerful wood knocks at a cabin in remote wilderness south of the town of Chicken",
+ "",
+ "April 2008, Southeast Fairbanks Borough (Class A) - Passenger on the Alcan Highway sees a tall bipedal creature walk across the road"]
